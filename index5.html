@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Registration / Service Request Form</title>
+</head>
+<body>
+
+    <h1>Company Registration / Service Request Form</h1>
+    <p>Please fill in the form below to register your company or request a service.</p>
+
+    <form method="post" action="#">
+
+        <!-- Section 1: Personal Information -->
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName"
+                   minlength="3" maxlength="60"
+                   pattern="[A-Za-z][A-Za-z .'-]*"
+                   required>
+            <br><br>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email"
+                   maxlength="100" required>
+            <br><br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone"
+                   pattern="[0-9+() -]{10,20}"
+                   minlength="10" maxlength="20"
+                   placeholder="e.g. 0712345678" required>
+            <br><br>
+        </fieldset>
+
+        <br>
+
+        <!-- Section 2: Company Information -->
+        <fieldset>
+            <legend>Company Information</legend>
+
+            <label for="companyName">Company Name:</label>
+            <input type="text" id="companyName" name="companyName"
+                   minlength="2" maxlength="100" required>
+            <br><br>
+
+            <label for="website">Company Website:</label>
+            <input type="url" id="website" name="website"
+                   maxlength="200"
+                   placeholder="https://www.example.com">
+            <br><br>
+
+            <label for="companySize">Company Size:</label>
+            <select id="companySize" name="companySize" required>
+                <option value="">-- Select Company Size --</option>
+                <option value="1-10">1–10 Employees</option>
+                <option value="11-50">11–50 Employees</option>
+                <option value="51-200">51–200 Employees</option>
+                <option value="201-500">201–500 Employees</option>
+                <option value="500+">More than 500 Employees</option>
+            </select>
+            <br><br>
+
+            <label for="industry">Industry:</label>
+            <input type="text" id="industry" name="industry"
+                   minlength="2" maxlength="60" required>
+            <br><br>
+        </fieldset>
+
+        <br>
+
+        <!-- Section 3: Service Request -->
+        <fieldset>
+            <legend>Service Request</legend>
+
+            <p>Service Type:</p>
+
+            <input type="radio" id="webDevelopment"
+                   name="serviceType" value="Web Development" required>
+            <label for="webDevelopment">Web Development</label>
+            <br>
+
+            <input type="radio" id="itSupport"
+                   name="serviceType" value="IT Support">
+            <label for="itSupport">IT Support</label>
+            <br>
+
+            <input type="radio" id="consultation"
+                   name="serviceType" value="Consultation">
+            <label for="consultation">Consultation</label>
+            <br>
+
+            <input type="radio" id="networkSetup"
+                   name="serviceType" value="Network Setup">
+            <label for="networkSetup">Network Setup</label>
+            <br><br>
+
+            <p>Preferred Contact Method:</p>
+
+            <input type="checkbox" id="contactEmail"
+                   name="contactMethod" value="Email">
+            <label for="contactEmail">Email</label>
+            <br>
+
+            <input type="checkbox" id="contactPhone"
+                   name="contactMethod" value="Phone">
+            <label for="contactPhone">Phone</label>
+            <br>
+
+            <input type="checkbox" id="contactSMS"
+                   name="contactMethod" value="SMS">
+            <label for="contactSMS">SMS</label>
+            <br><br>
+
+            <label for="appointmentDate">Appointment Date:</label>
+            <input type="date" id="appointmentDate"
+                   name="appointmentDate"
+                   min="2026-10-25" max="2030-12-31" required>
+            <br><br>
+
+            <label for="appointmentTime">Appointment Time:</label>
+            <input type="time" id="appointmentTime"
+                   name="appointmentTime" required>
+            <br><br>
+
+            <label for="budget">Budget Range (KSh):</label>
+            <input type="number" id="budget" name="budget"
+                   min="1000" max="1000000" step="1000"
+                   placeholder="Enter your budget" required>
+            <br><br>
+        </fieldset>
+
+        <br>
+
+        <!-- Section 4: Message and Agreement -->
+        <fieldset>
+            <legend>Message and Agreement</legend>
+
+            <label for="message">Additional Information:</label>
+            <br>
+            <textarea id="message" name="message"
+                      rows="5" cols="40"
+                      minlength="10" maxlength="1000"
+                      placeholder="Describe your requirements..."
+                      required></textarea>
+            <br><br>
+
+            <input type="checkbox" id="terms"
+                   name="terms" value="accepted" required>
+            <label for="terms">
+                I agree to the Terms and Conditions.
+            </label>
+            <br><br>
+        </fieldset>
+
+        <br>
+
+        <button type="submit">Submit Form</button>
+        <button type="reset">Reset Form</button>
+
+    </form>
+
+</body>
+</html>
